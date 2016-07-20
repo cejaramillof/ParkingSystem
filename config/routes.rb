@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'users#show'
   devise_for :users
     
-    resources :user do
+    resources :users do
         resources :vehicles
     end
     resources :location do
