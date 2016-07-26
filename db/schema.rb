@@ -11,23 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716010437) do
+ActiveRecord::Schema.define(version: 20160725235447) do
 
-  create_table "locations", force: :cascade do |t|
-    t.float    "location_latitude"
-    t.float    "location_longitude"
+  create_table "Locations", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "description"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "max_slots"
+    t.string   "adress"
   end
 
   create_table "park_records", force: :cascade do |t|
-    t.datetime "date_details"
     t.string   "comments"
     t.integer  "slot_id"
     t.integer  "vehicle_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "entry_date"
+    t.datetime "exit_date"
+    t.float    "total"
   end
 
   add_index "park_records", ["slot_id"], name: "index_park_records_on_slot_id"
