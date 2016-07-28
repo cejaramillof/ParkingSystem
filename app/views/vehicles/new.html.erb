@@ -1,3 +1,4 @@
+<%= render partial: "layouts/user_menu" %>
 <h2>Register new vehicle</h2>
 <h3>New Vehicle for <%= @user.first_name %> <%= @user.last_name %></h3>
 <%= form_for @vehicle, url: {action: 'create'} do |form|%>

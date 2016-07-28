@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   validates :birthdate, presence: true, :timeliness => {:on_or_before => lambda { Date.current }, :type => :date}
 #    validates :username, format: { with: /regex/ }
-  before_save :is_admin
+  after_save :is_admin
     
     private
     def is_admin

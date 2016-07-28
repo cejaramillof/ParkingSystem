@@ -1,0 +1,21 @@
+<%= render partial: "layouts/user_menu" %>
+<h2>Vehiculos</h2>
+<h3><%= @user.first_name %> <%= @user.last_name %> Vehicle's</h3>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <th>Modelo</th>
+            <th>Vin</th>
+            <th>Year</th>
+        </thead>
+        <tbody>
+        <% @vehicles.each do |vehicle| %>
+            <tr>
+                <td><%= vehicle.model %></td>
+                <td><%= vehicle.vin %></td>
+                <td><%= vehicle.year %></td>    
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
