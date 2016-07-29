@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
   validates :last_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
   validates :email, presence: true, uniqueness: true, format:  /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, length: { maximum: 254 }
-  validates :password, presence: true, confirmation: true
-  validates :password_confirmation, presence: true
   validates :birthdate, presence: true, :timeliness => {:on_or_before => lambda { Date.current }, :type => :date}
 #    validates :username, format: { with: /regex/ }
   after_save :is_admin
@@ -19,4 +17,3 @@ class User < ActiveRecord::Base
        is_admin = false
     end
 end  
-  
