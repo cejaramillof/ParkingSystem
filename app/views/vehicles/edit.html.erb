@@ -1,0 +1,19 @@
+<h3 class="text-center"> Edit Vehicle</h3>
+<%= form_for @vehicle, url: {action: 'update'} do |form|%>
+<%= form.label :model, for:'model'%>
+<div class="form-group">
+    <%= form.text_field :model, class:'form-control', required: true%>
+</div>
+<%= form.label :year %>
+    <div class="form-group">
+        <%= form.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year), class: 'form-control', required: true %>
+    </div>
+    <%= form.label :vin %>
+    <div class="form-group">
+        <%= form.text_field :vin, required: true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= form.submit "Update", class: 'btn btn-success', data: {confirm: "Are you sure?"} %>
+        <%= link_to "Cancel", user_vehicles_path(current_user), class: 'btn btn-default'%>
+    </div>
+<% end %>
