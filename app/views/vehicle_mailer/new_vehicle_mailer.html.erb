@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+ </head>
+ <body>
+ <h3>Hi <%= @user.first_name %> <%= @user.last_name %></h3>
+   <p>Please notice that you have added a new vehicle to the parking system</p>
+   <p>
+    Vehicle Details: 
+   </p>
+   <nav>
+     <ul>
+       <li><strong>Model:</strong><%= @vehicle.model %></li> 
+       <li><strong>VIN:</strong><%= @vehicle.vin %></li> 
+       <li><strong>Year:</strong><%= @vehicle.year %></li> 
+     </ul>  
+   </nav>
+ </body>
+</html>
