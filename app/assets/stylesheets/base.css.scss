@@ -1,3 +1,23 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'bootstrap/theme';
+
+/* Slots */
+
+.slot-occupied {
+  background-color:#ed3c15;
+  color: #fcfcf7;
+  font-weight: bold;
+  border: 2px solid #f5ebee;
+  text-align: center;
+  padding: 10px;
+}
+
+.slot-free {
+  background-color:#57bf56;
+  color: #fcfcf7;
+  font-weight: bold;
+  border: 2px solid #f5ebee;
+  text-align: center;
+  padding: 10px;
+}

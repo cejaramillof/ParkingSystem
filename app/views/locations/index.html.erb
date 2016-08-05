@@ -33,7 +33,7 @@
                   </td>
                 <%end%>
                 <td>
-                  <%= location.slots.count %> / <%= location.max_slots %>
+                  <%= link_to location.slots.count, location_slots_path(location) %> / <%= location.max_slots %>
                 </td>
                 <td>
                   <%= link_to "Edit", edit_location_path(location), class: 'btn btn-default' %>
